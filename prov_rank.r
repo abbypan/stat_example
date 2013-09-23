@@ -19,4 +19,4 @@ r <- s[order(s$cnt,decreasing=TRUE), ]
 names(r) <- c('object','state','prov','area','cnt',
                         'prov_rank','prov_rate','state_rank','state_rate');                                                                  
 #最终数据
-write.table(r, file='prov_rank_stat.csv', sep=',', quote=FALSE)
+write.table(r, file='prov_rank_stat.csv', sep=',',row.names=FALSE, quote=FALSE)
