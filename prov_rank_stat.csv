@@ -1,4 +1,4 @@
-object,state,prov,area,value,prov_rank,prov_rate,state_rank,state_rate
+object,state,prov,area,cnt,prov_rank,prov_rate,state_rank,state_rate
 6,A,中国,广东,广州,4000,1,0.571428571428571,1,0.392156862745098
 3,Y,中国,安徽,合肥,2000,1,0.625,2,0.196078431372549
 5,Z,中国,广东,深圳,2000,2,0.285714285714286,2,0.196078431372549
