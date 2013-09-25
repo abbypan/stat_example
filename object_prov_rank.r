@@ -7,7 +7,7 @@ library('plyr')
 decr_rank <- function (d) match(d, sort(d,decreasing=TRUE))
 
 #原始数据
-d <- read.table('prov_rank.csv', header=TRUE, sep=',')
+d <- read.table('data_object_info.csv', header=TRUE, sep=',')
 
 #省内排名，省内占比
 p <- ddply(d, .(state,prov), transform,
@@ -22,4 +22,4 @@ r <- s[order(s$cnt,decreasing=TRUE), ]
 names(r) <- c('object','state','prov','area','cnt',
                         'prov_rank','prov_rate','state_rank','state_rate');                                                                  
 #最终数据
-write.table(r, file='prov_rank_stat.csv', sep=',',row.names=FALSE, quote=FALSE)
+write.table(r, file='object_prov_rank.csv', sep=',',row.names=FALSE, quote=FALSE)

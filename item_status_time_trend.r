@@ -19,13 +19,13 @@ cut_minute <- function(time, step_minute) {
 }
 
 #每个object有一个覆盖的cnt
-object_info <- read.table('prov_rank_stat.csv', header=TRUE,sep=',')
+object_info <- read.table('object_prov_rank.csv', header=TRUE,sep=',')
 object_cnt <- object_info[,c(1,5)]
 object_all_cnt <- sum(object_cnt$cnt)
 
 #在不同node，指定item(>>> item 唯一 <<<)，监测object返回的status
 #每个object只分配一个node进行监测
-item_d <- read.table('item_status_on_object.csv', header=TRUE,sep=',')
+item_d <- read.table('data_item_status_on_object.csv', header=TRUE,sep=',')
 d <- merge(item_d, object_cnt, by="object")
 
 #按cut_time统计不同status所占的cnt总和
@@ -35,7 +35,7 @@ v <- dcast(s, cut_time ~ status , value.var = "stat_cnt")
 v[is.na(v)] <- 0
 vv <- ddply(v, .(cut_time), transform, unknown = object_all_cnt - good - normal - bad)
 
-write.table(vv, file='item_status_stat.csv', sep=',',row.names=FALSE, quote=FALSE)
+write.table(vv, file='item_status_time_trend.csv', sep=',',row.names=FALSE, quote=FALSE)
 
 #m <- melt(vv)
 

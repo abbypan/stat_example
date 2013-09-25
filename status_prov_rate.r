@@ -4,8 +4,8 @@ library('plyr')
 library('gdata')
 
 
-d <- read.table('prov_rank.csv', header=TRUE, sep=',')
-s <- read.table('object_status.csv', header=TRUE, sep=',')
+d <- read.table('object_prov_rank.csv', header=TRUE, sep=',')
+s <- read.table('data_object_status.csv', header=TRUE, sep=',')
 
 
 ds <- merge(d, s,all.x=TRUE, by="object")
