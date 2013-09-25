@@ -1,3 +1,6 @@
+#object 全局唯一，每个object都有一个cnt
+#统计 每个object 的 cnt，在object所在省内排名、省内占比、国内排名、国内占比 
+
 library('plyr') 
 
 #取降序排列结果 

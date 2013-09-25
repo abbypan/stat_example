@@ -1,5 +1,8 @@
+# 按省份统计不同status的object的cnt总和，占该省份object的cnt总和的比例
+
 library('plyr')
 library('gdata')
+
 
 d <- read.table('prov_rank.csv', header=TRUE, sep=',')
 s <- read.table('object_status.csv', header=TRUE, sep=',')
